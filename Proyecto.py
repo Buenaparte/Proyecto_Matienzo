@@ -64,7 +64,7 @@ def main():
      listo = False
      x = x.upper()  
      for i in Lista_Guardada:
-         if x in i:
+         if x == i[0]:
              listo = True
              break
      if listo:
@@ -76,7 +76,7 @@ def main():
      y = y.upper()
      listo = False
      for i in Lista_Guardada:
-         if y in i:
+         if y == i[1]:
              listo = True
              break
      if listo:
