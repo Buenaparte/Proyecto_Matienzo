@@ -59,14 +59,42 @@ def dijkstra_menos_viajes(origen, destino, lista_guardada):
 def main():
  Lista_Guardada = Guardar_csv()
  #print(Lista_Guardada)
- x = input("Coloque el codigo del aeropuerto de origen:  \n")
- y = input("Coloque el codigo del aeropuerto de destino:  \n")
- z = input("Coloque: \n1- si desea el menor precio posible, \n2- si desea el menor tiempo posible \n")
- if z == "1":
-     print("El menor precio posible es: ")
- elif z == "2":
-     dijkstra_menos_viajes(x,y,Lista_Guardada)
- else:
-     print("Opcion no valida")
+ while True:
+     x = input("Coloque el codigo del aeropuerto de origen:  \n")
+     listo = False
+     x = x.upper()  
+     for i in Lista_Guardada:
+         if x in i:
+             listo = True
+             break
+     if listo:
+         break
+     else:
+         print("Codigo no valido")
+ while True:
+     y = input("Coloque el codigo del aeropuerto de destino:  \n")
+     y = y.upper()
+     listo = False
+     for i in Lista_Guardada:
+         if y in i:
+             listo = True
+             break
+     if listo:
+         break
+     else:
+         print("Codigo no valido")
+ while True:
+     z = input("Coloque: \n1- si desea el menor precio posible, \n2- si desea el menor tiempo posible \n")
+     listo = False
+     if z == "1":
+         print("El menor precio posible es: ")
+         listo = True
+     elif z == "2":
+         dijkstra_menos_viajes(x, y, Lista_Guardada)
+         listo = True
+     else:
+          print("Opcion no valida")
+     if listo:
+          break
 
 main()
