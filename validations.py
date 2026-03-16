@@ -24,7 +24,7 @@ def cargar_visa(archivo: str) -> list:
             else:
                 visa_requerida = False
             lista_visa.append((codigo, nombre, visa_requerida))
-    print(lista_visa)
+    #print(lista_visa)
     return lista_visa
 
 def dijkstra(tipo: str, grafo: dict, inicio: str, destino: str, lista_visa: list, visa: bool) -> tuple:
